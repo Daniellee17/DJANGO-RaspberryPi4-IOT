@@ -1,0 +1,24 @@
+{% extends 'baselayout.html' %}
+
+{% block content %}
+
+    <nav>
+      <div class="brand">
+        <h2>
+          <Label ID="LblName" Text="Raspberry Pi 3B+" ForeColor="White" Font-Bold="false"></Label>
+        </h2>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">About</a></li>
+
+      </ul>
+    </nav>
+    <form method='get'>
+    <input type='submit' class="btn" Style="position:absolute; top:50%; left:46%" name="on_btn" value="ON"></button>
+    <input type='submit' class="btn" Style="position:absolute; top:50%; left:56%" name="off_btn" value="OFF"></button>
+    </form>
+
+
+
+{% endblock %}
