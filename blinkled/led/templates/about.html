@@ -1,0 +1,30 @@
+{% extends 'baselayout.html' %}
+
+{% block content %}
+
+<nav>
+  <div class="brand">
+    <h2>
+      <Label ID="LblName" Text="Raspberry Pi 3B+" ForeColor="White" Font-Bold="false"></Label>
+    </h2>
+  </div>
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+
+  </ul>
+</nav>
+<div class="valuesBox">
+  <img src="../assets/plantlogo.png" class="Avatar" />
+  <h1>Garden Status</h1>
+
+  <ul>
+    <li><a>Temperature:<a></li>
+    <li><a>Soil Moisture:<a></li>
+    <li><a>Humidity: <a></li>
+  </ul>
+
+</div>
+
+
+{% endblock %}
