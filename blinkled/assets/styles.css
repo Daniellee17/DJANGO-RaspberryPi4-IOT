@@ -37,7 +37,7 @@
       width: 510px;
       height: 360px;
       background: rgba(0, 0, 0, 0.3);
-      color: #fff;
+      color: #FF6F8B;
       top: 50%;
       left: 50%;
       position: absolute;
@@ -54,45 +54,6 @@
       color: WHITE;
     }
 
-    .aboutBox input[type="text"] {
-      margin-bottom: 16px;
-      border: none;
-      border-bottom: 1px solid #fff;
-      background: transparent;
-      outline: none;
-      height: 40px;
-      color: #fff;
-      font-size: 16px;
-      position: center;
-    }
-
-    .aboutBox input[type="submit"] {
-      border: none;
-      outline: none;
-      height: 40px;
-      background: rgba(0, 0, 0, 0.3);
-      color: #fff;
-      font-size: 18px;
-      border-radius: 0px;
-    }
-
-    .aboutBox input[type="submit"]:hover {
-      cursor: pointer;
-      background: #39dc79;
-      color: #000;
-    }
-
-    .aboutBox li {
-      list-style: none;
-      padding: 10px 15px;
-    }
-
-    .aboutBox a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-    }
-
     .valuesBox {
       width: 400px;
       height: 250px;
@@ -105,41 +66,6 @@
       box-sizing: border-box;
       padding: 50px 30px;
       font-family: sans-serif;
-    }
-
-    .valuesBox p {
-      margin: 0;
-      padding: 0;
-      font-size: 15px;
-      color: #31BDC9;
-    }
-
-    .valuesBox input[type="text"] {
-      margin-bottom: 16px;
-      border: none;
-      border-bottom: 1px solid #fff;
-      background: transparent;
-      outline: none;
-      height: 40px;
-      color: #fff;
-      font-size: 16px;
-      position: center;
-    }
-
-    .valuesBox input[type="submit"] {
-      border: none;
-      outline: none;
-      height: 40px;
-      background: rgba(0, 0, 0, 0.3);
-      color: #fff;
-      font-size: 18px;
-      border-radius: 0px;
-    }
-
-    .valuesBox input[type="submit"]:hover {
-      cursor: pointer;
-      background: #39dc79;
-      color: #000;
     }
 
     .valuesBox li {
