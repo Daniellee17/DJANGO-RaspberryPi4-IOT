@@ -2,22 +2,33 @@
 
 {% block content %}
 
-    <nav>
-      <div class="brand">
-        <h2>
-          <Label ID="LblName" Text="Raspberry Pi 3B+" ForeColor="White" Font-Bold="false"></Label>
-        </h2>
-      </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">About</a></li>
+<nav>
+  <div class="brand">
+    <h2>
+      <Label ID="LblName" Text="Raspberry Pi 3B+" ForeColor="White" Font-Bold="false"></Label>
+    </h2>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html">About</a></li>
 
-      </ul>
-    </nav>
-    <form method='get'>
-    <input type='submit' class="btn" Style="position:absolute; top:50%; left:46%" name="on_btn" value="ON"></button>
-    <input type='submit' class="btn" Style="position:absolute; top:50%; left:56%" name="off_btn" value="OFF"></button>
-    </form>
+  </ul>
+</nav>
+<div class="valuesBox">
+  <img src="../assets/login2.jpg"; border-radius: 50%; class="vAvatar" />
+  <h1>Garden Status</h1>
+
+  <ul>
+    <li><a>Temperature:<a></li>
+    <li><a>Soil Moisture:<a></li>
+    <li><a>Humidity: <a></li>
+  </ul>
+
+</div>
+<form method='get'>
+  <input type='submit' class="btn" Style="position:absolute; top:50%; left:46%" name="on_btn" value="ON"></button>
+  <input type='submit' class="btn" Style="position:absolute; top:50%; left:56%" name="off_btn" value="OFF"></button>
+</form>
 
 
 
