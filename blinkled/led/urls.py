@@ -7,10 +7,9 @@ from django.conf import settings
 from . import views as led_views
 
 
-
 urlpatterns = [
-    path('', led_views.main, name = "home"),
-    path('about', led_views.about, name = "about"),
+    path('', led_views.main, name="home"),
+    path('aboutPage', led_views.about, name="about"),
 
 ]
 
