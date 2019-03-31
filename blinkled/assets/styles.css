@@ -18,11 +18,11 @@
     }
 
     .rpiAvatar {
-      width: 75px;
-      height: 80px;
+      width: 120px;
+      height: 100px;
       border-radius: 20px;
       position: absolute;
-      top: -40px;
+      top: -55px;
       left: calc(50% - 50px);
     }
 
