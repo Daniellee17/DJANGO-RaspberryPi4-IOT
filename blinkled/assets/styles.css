@@ -8,8 +8,17 @@
       padding: 0;
     }
 
-    img {
+    .Avatar {
       width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      position: absolute;
+      top: -40px;
+      left: calc(50% - 50px);
+    }
+
+    .rpiAvatar {
+      width: 75px;
       height: 80px;
       border-radius: 20px;
       position: absolute;
