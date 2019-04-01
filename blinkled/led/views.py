@@ -33,3 +33,8 @@ def main(request):
 
     while True:
                return render(request,'main.html');
+
+def about(request):
+
+    while True:
+        return render(request, 'about.html')
