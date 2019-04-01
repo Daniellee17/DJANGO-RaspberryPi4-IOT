@@ -12,7 +12,10 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(21, GPIO.OUT, initial=0)
 # FAN
 GPIO.setup(20, GPIO.OUT, initial=0)
+# DHT11
 sensor = Adafruit_DHT.DHT11
+# SOIL MOISTURE SENSOR
+GPIO.setup(12, GPIO.IN)
 
 
 def main(request):
@@ -41,6 +44,11 @@ def main(request):
             print('Failed to get reading. Try again!')
 
         print("(Pin 16 for DHT11) Page refreshed!")
+        
+        if GPIO.input(12):
+                print ("Water Detected!")
+        else:
+                print ("No Water Detected!")
 
     while True:
         return render(request, 'main.html')
