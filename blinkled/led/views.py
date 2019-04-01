@@ -29,15 +29,15 @@ def main(request):
         print("(Pin 21) The light is OFF")
         GPIO.output(21, GPIO.LOW)
 
-     if (request.GET.get('onFAN_btn')):
+    if (request.GET.get('onFAN_btn')):
         print("(Pin 20) The fan is ON")
         GPIO.output(20, GPIO.HIGH)
 
-     if (request.GET.get('offFAN_btn')):
+    if (request.GET.get('offFAN_btn')):
         print("(Pin 20) The fan is OFF")
         GPIO.output(20, GPIO.LOW)
 
-     if (request.GET.get('refresh_btn')):
+    if (request.GET.get('refresh_btn')):
         humidity, temperature = Adafruit_DHT.read_retry(sensor, 16)
         if humidity is not None and temperature is not None:
             print(
