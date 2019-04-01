@@ -4,11 +4,17 @@ from django.http import HttpResponse
 
 
 def main(request):
-    if (request.GET.get('on_btn')):
-        print("YOU HAVE TURNED IT ON")
+    if (request.GET.get('onLED_btn')):
+        print("The light is ON")
 
-    if (request.GET.get('off_btn')):
-        print("YOU HAVE TURNED IT OFF")
+    if (request.GET.get('offLED_btn')):
+        print("The light is OFF")
+
+    if (request.GET.get('onFAN_btn')):
+        print("The fan is ON")
+
+    if (request.GET.get('offFAN_btn')):
+        print("The fan is OFF")
 
     while True:
         return render(request, 'main.html')
