@@ -18,11 +18,19 @@
   <img src="../assets/plantlogo.png" class="Avatar" />
   <h1>Garden Status</h1>
 
+
+  {% for a in values %}
+
   <ul>
-    <li><a>Temperature:<a></li>
-    <li><a>Soil Moisture:<a></li>
-    <li><a>Humidity: <a></li>
+    <li><a>Temperature: {{a.temperature}} C<a></li>
+    <li><a>Soil Moisture: {{a.moisture}} %<a></li>
+    <li><a>Humidity: {{a.humidity}} C<a></li>
   </ul>
+
+
+  {% endfor %}
+
+
   <form method='get'>
     <input type='submit' class="btn" Style="position:absolute; top:70%; left:56%" name="refresh_btn" value="refresh"></button>
   </form>
