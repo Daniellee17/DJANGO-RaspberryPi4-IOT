@@ -16,6 +16,10 @@ def main(request):
     if (request.GET.get('offFAN_btn')):
         print("The fan is OFF")
 
+    if (request.GET.get('refresh_btn')):
+        print("Page refreshed!")
+
+
     while True:
         return render(request, 'main.html')
 
