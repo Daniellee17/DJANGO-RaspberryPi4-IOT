@@ -10,7 +10,7 @@ import Adafruit_DHT
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 # LIGHT BULB
-GPIO.setup(21, GPIO.OUT, initial=0)
+GPIO.setup(21, GPIO.OUT, initial=1)
 # FAN
 GPIO.setup(20, GPIO.OUT, initial=0)
 # DHT11
@@ -23,11 +23,11 @@ def main(request):
     values = sensors.objects.all()
     if (request.GET.get('onLED_btn')):
         print("(Pin 21) The light is ON")
-        GPIO.output(21, GPIO.HIGH)
+        GPIO.output(21, GPIO.LOW)
 
     if (request.GET.get('offLED_btn')):
         print("(Pin 21) The light is OFF")
-        GPIO.output(21, GPIO.LOW)
+        GPIO.output(21, GPIO.HIGH)
 
     if (request.GET.get('onFAN_btn')):
         print("(Pin 20) The fan is ON")
