@@ -52,11 +52,9 @@ def main(request):
         else:
             print("No Water Detected!")
 
-            hello = sensors()
-            hello.temperature = temperature
-            hello.humidity = humidity
-            hello.moisture = 3.0
-            hello.save()
+        sensors.objects.filter(pk=12).update(temperature=temperature, humidity=humidity, moisture = 1.0)
+        
+       
 
     while True:
         return render(request, 'main.html', {'values': values})
