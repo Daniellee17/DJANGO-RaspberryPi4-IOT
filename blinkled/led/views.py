@@ -21,26 +21,26 @@ GPIO.setup(12, GPIO.IN)
 
 def main(request):
     print("------------------------------------------REFRESHED!------------------------------------------")
-
-	values = sensors.objects.all()
+    values = sensors.objects.all()
     currentTemp = sensors.objects.only('temperature').get(pk=12).temperature
     currentHumidity = sensors.objects.only('humidity').get(pk=12).humidity
 
     if(currentTemp>30):
-        if(currentHumidity<90):
+        if(currentHumidity<40):
             sensors.objects.filter(pk=12).update(action="Temperature too high, Humidity is too low!")
         else:
             sensors.objects.filter(pk=12).update(action="Temperature is too hot!")
-    else:
-        sensors.objects.filter(pk=12).update(action="None")
-
-    if(currentHumidity<90):
+    
+    if(currentHumidity<40):
         if(currentTemp>30):
             sensors.objects.filter(pk=12).update(action="Temperature too high, Humidity is too low!")
         else:
             sensors.objects.filter(pk=12).update(action="Humidity is too low!")
-    else:
-        sensors.objects.filter(pk=12).update(action="None")
+    
+    if(currentTemp<30):
+        if(currentHumidity>40):
+            sensors.objects.filter(pk=12).update(action="Normal")
+
 
     humidity, temperature = Adafruit_DHT.read_retry(sensor, 16)
     if humidity is not None and temperature is not None:
