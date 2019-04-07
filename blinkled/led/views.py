@@ -53,8 +53,8 @@ def main(request):
             print("No Water Detected!")
 
             hello = sensors()
-            hello.temperature = 1.0
-            hello.humidity = 2.0
+            hello.temperature = temperature
+            hello.humidity = humidity
             hello.moisture = 3.0
             hello.save()
 
