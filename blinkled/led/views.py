@@ -26,6 +26,9 @@ def main(request):
     currentHumidity = sensors.objects.only('humidity').get(pk=12).humidity
 
     if(currentTemp>30):
+        print("(Pin 20) The fan is ON")
+        GPIO.output(20, GPIO.HIGH)
+        sensors.objects.filter(pk=12).update(fanStatus="Activated")
         if(currentHumidity<40):
             sensors.objects.filter(pk=12).update(action="Temperature too high, Humidity is too low!")
         else:
@@ -33,11 +36,17 @@ def main(request):
     
     if(currentHumidity<40):
         if(currentTemp>30):
+            print("(Pin 20) The fan is ON")
+            GPIO.output(20, GPIO.HIGH)
+            sensors.objects.filter(pk=12).update(fanStatus="Activated")
             sensors.objects.filter(pk=12).update(action="Temperature too high, Humidity is too low!")
         else:
             sensors.objects.filter(pk=12).update(action="Humidity is too low!")
     
     if(currentTemp<30):
+        print("(Pin 20) The fan is OFF")
+        GPIO.output(20, GPIO.LOW)
+        sensors.objects.filter(pk=12).update(fanStatus="Deactivated")
         if(currentHumidity>40):
             sensors.objects.filter(pk=12).update(action="Normal")
 
