@@ -21,6 +21,21 @@ GPIO.setup(12, GPIO.IN)
 
 def main(request):
     values = sensors.objects.all()
+    humidity, temperature = Adafruit_DHT.read_retry(sensor, 16)
+    if humidity is not None and temperature is not None:
+        print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
+    else:
+        print('Failed to get reading. Try again!')
+
+    print("(Pin 16 for DHT11) Page refreshed!")
+
+    if GPIO.input(12):
+        print("Water Detected!")
+    else:
+        print("No Water Detected!")
+
+    sensors.objects.filter(pk=12).update(temperature=temperature, humidity=humidity, moisture = 1.0)
+    
     if (request.GET.get('onLED_btn')):
         print("(Pin 21) The light is ON")
         GPIO.output(21, GPIO.LOW)
@@ -56,8 +71,8 @@ def main(request):
         
        
 
-    while True:
-        return render(request, 'main.html', {'values': values})
+    return render(request, 'main.html', {'values': values})
+        
 
 
 def about(request):
