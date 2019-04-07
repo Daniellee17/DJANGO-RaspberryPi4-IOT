@@ -21,7 +21,27 @@ GPIO.setup(12, GPIO.IN)
 
 def main(request):
     print("------------------------------------------REFRESHED!------------------------------------------")
-    values = sensors.objects.all()
+
+	values = sensors.objects.all()
+    currentTemp = sensors.objects.only('temperature').get(pk=12).temperature
+    currentHumidity = sensors.objects.only('humidity').get(pk=12).humidity
+
+    if(currentTemp>30):
+        if(currentHumidity<90):
+            sensors.objects.filter(pk=12).update(action="Temperature too high, Humidity is too low!")
+        else:
+            sensors.objects.filter(pk=12).update(action="Temperature is too hot!")
+    else:
+        sensors.objects.filter(pk=12).update(action="None")
+
+    if(currentHumidity<90):
+        if(currentTemp>30):
+            sensors.objects.filter(pk=12).update(action="Temperature too high, Humidity is too low!")
+        else:
+            sensors.objects.filter(pk=12).update(action="Humidity is too low!")
+    else:
+        sensors.objects.filter(pk=12).update(action="None")
+
     humidity, temperature = Adafruit_DHT.read_retry(sensor, 16)
     if humidity is not None and temperature is not None:
         print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
@@ -40,18 +60,26 @@ def main(request):
     if (request.GET.get('onLED_btn')):
         print("(Pin 21) The light is ON")
         GPIO.output(21, GPIO.LOW)
+        sensors.objects.filter(pk=12).update(lightStatus="Activated")
+
 
     if (request.GET.get('offLED_btn')):
         print("(Pin 21) The light is OFF")
         GPIO.output(21, GPIO.HIGH)
+        sensors.objects.filter(pk=12).update(lightStatus="Deactivated")
+
 
     if (request.GET.get('onFAN_btn')):
         print("(Pin 20) The fan is ON")
         GPIO.output(20, GPIO.HIGH)
+        sensors.objects.filter(pk=12).update(fanStatus="Activated")
+
 
     if (request.GET.get('offFAN_btn')):
         print("(Pin 20) The fan is OFF")
         GPIO.output(20, GPIO.LOW)
+        sensors.objects.filter(pk=12).update(fanStatus="Deactivated")
+
 
     if (request.GET.get('refresh_btn')):
         humidity, temperature = Adafruit_DHT.read_retry(sensor, 16)

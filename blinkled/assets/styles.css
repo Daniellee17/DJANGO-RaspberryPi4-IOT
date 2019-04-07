@@ -75,13 +75,43 @@
       font-family: sans-serif;
     }
 
+    .statusBox {
+      width: 350px;
+      height: 200px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      top: 23%;
+      left: 18%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      padding: 30px 30px;
+      font-family: sans-serif;
+    }
+
+    .statusBox li {
+      list-style: none;
+      padding: 5px 10px;
+    }
+
+    .statusBox a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .statusBox a:hover {
+      color: #39dc79;
+    }
+
     .valuesBox {
       width: 350px;
       height: 200px;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
       background: rgba(0, 0, 0, 0.7);
       color: #fff;
-      top: 25%;
+      top: 51%;
       left: 18%;
       position: absolute;
       transform: translate(-50%, -50%);
@@ -127,7 +157,7 @@
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
       background: rgba(0, 0, 0, 0.7);
       color: #fff;
-      top: 53%;
+      top: 79%;
       left: 18%;
       position: absolute;
       transform: translate(-50%, -50%);
@@ -162,7 +192,7 @@
       color: #fff;
       font-size: 18px;
       border-radius: 20px;
-      
+
     }
 
     .controllerBox input[type="submit"]:hover {

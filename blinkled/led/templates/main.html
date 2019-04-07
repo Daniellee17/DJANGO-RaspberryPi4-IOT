@@ -14,9 +14,31 @@
 
   </ul>
 </nav>
-<div class="valuesBox">
-  <img src="../assets/plantlogo.png" class="Avatar" />
+
+<div class="statusBox">
+  <img src="../assets/statuslogo.png" class="Avatar" />
   <h1>Garden Status</h1>
+
+
+  {% for a in values %}
+
+  <ul>
+    <li><a>Recommendation: {{a.action}}<a></li>
+    <li><a>Lights: {{a.lightStatus}}<a></li>
+    <li><a>Fan: {{a.fanStatus}}<a></li>
+
+  </ul>
+
+
+  {% endfor %}
+
+
+</div>
+
+
+<div class="valuesBox">
+  <img src="../assets/thermometerlogo.png" class="Avatar" />
+  <h1>Sensor Readings</h1>
 
 
   {% for a in values %}
@@ -60,7 +82,9 @@
 </div>
 
 <script>
-  window.setTimeout(function () { location.href = "{% url 'home' %}"; }, 6000);
+  window.setTimeout(function() {
+    location.href = "{% url 'home' %}";
+  }, 6000);
 </script>
 
 
