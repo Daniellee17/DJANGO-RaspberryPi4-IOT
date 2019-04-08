@@ -2,9 +2,13 @@
 
 
 Features:<br />  
-  Remote host<br />  
-  Reads data from sensors and snaps a new image every 15 seconds (Javascript)<br />    
-  Can control raspberry pi's gpio pins anywhere<br />  
+<u1>
+  <li> Remote host
+      <li> Remote host
+          <li>  Reads data from sensors and snaps a new image every 15 seconds (Javascript)
+  
+  </u1>Can control raspberry pi's gpio pins anywhere
+
   
   
   
