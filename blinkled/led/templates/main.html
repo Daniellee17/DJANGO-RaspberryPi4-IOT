@@ -78,7 +78,14 @@
 <div class="imageBox">
   <img src="../assets/cameralogo.png" class="Avatar" />
   <h1>Camera</h1>
-  <img src="../assets/plant.jpg" class="cameraImg" />
+{% for a in values %}
+
+  <img src="{{a.camera.url}}" class="cameraImg" />
+
+  {% endfor %}
+
+
+ 
 </div>
 
 <script>

@@ -21,7 +21,10 @@ GPIO.setup(12, GPIO.IN)
 
 def main(request):
     print("------------------------------------------REFRESHED!------------------------------------------")
+    
+
     values = sensors.objects.all()
+    sensors.objects.filter(pk=12).update(camera="cameralogo.png")
     currentTemp = sensors.objects.only('temperature').get(pk=12).temperature
     currentHumidity = sensors.objects.only('humidity').get(pk=12).humidity
 
