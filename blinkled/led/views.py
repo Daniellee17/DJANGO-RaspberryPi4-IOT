@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import sensors
+#----------------CAMERA----------------
+import pygame, sys
+from pygame.locals import *
+import pygame.camera
 
 
 #!/usr/bin/python
@@ -24,7 +28,14 @@ def main(request):
     
 
     values = sensors.objects.all()
-    sensors.objects.filter(pk=12).update(camera="cameralogo.png")
+    pygame.init()
+    pygame.camera.init()
+    cam = pygame.camera.Camera("/dev/video0",(352,288))
+    cam.start()
+    image= cam.get_image()
+    pygame.image.save(image,'/home/pi/thesis/blinkled/assets/101.bmp')
+    cam.stop()
+    sensors.objects.filter(pk=12).update(camera="101.bmp")
     currentTemp = sensors.objects.only('temperature').get(pk=12).temperature
     currentHumidity = sensors.objects.only('humidity').get(pk=12).humidity
 
