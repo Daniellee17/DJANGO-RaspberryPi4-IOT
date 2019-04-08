@@ -1,14 +1,10 @@
 <h3>Created by: Danielle Espiritu</h3>
 
 
-Features:
-
-
-  Remote host  
-  
-  Reads data from sensors and snaps a new image every 15 seconds (Javascript)  
-  
-  Can control raspberry pi's gpio pins anywhere
+Features:<br />  
+  Remote host<br />  
+  Reads data from sensors and snaps a new image every 15 seconds (Javascript)<br />    
+  Can control raspberry pi's gpio pins anywhere<br />  
   
   
   
